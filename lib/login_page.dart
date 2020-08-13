@@ -75,7 +75,6 @@ class _LoginPageState extends State<LoginPage> {
                               content: Text("E-Posta veya şifre hatalı"),
                               duration: Duration(seconds: 2),
                             ));
-
                           }
                         }
                       },
@@ -83,6 +82,21 @@ class _LoginPageState extends State<LoginPage> {
                       child: Text("Giriş yap"),
                     ),
                   ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: RaisedButton(
+                onPressed: () async {
+                    if (!await userRepo.signInWithGoogle()) {
+                      _scaffoldKey.currentState.showSnackBar(SnackBar(
+                        content: Text("E-Posta veya şifre hatalı"),
+                        duration: Duration(seconds: 2),
+                      ));
+                  }
+                },
+                color: Colors.red,
+                child: Text("Google ile yap"),
+              ),
+            )
           ],
         ),
       ),

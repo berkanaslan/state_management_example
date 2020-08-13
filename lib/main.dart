@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_state_management/bloc_example.dart';
 import 'package:flutter_state_management/counter.dart';
 import 'package:flutter_state_management/login_page.dart';
 import 'package:flutter_state_management/provider_exercise.dart';
 import 'package:flutter_state_management/splash.dart';
+import 'package:flutter_state_management/stream_example.dart';
 import 'package:flutter_state_management/user_repository.dart';
 import 'package:provider/provider.dart';
 
@@ -83,8 +85,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => ProviderwithFirebaseAuth()));
               },
-              child: Text("Login Page"),
+              child: Text("Login Page (Provider)"),
+            ),
+            RaisedButton(
+              color: Colors.amber,
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => StreamExample()));
+              },
+              child: Text("Counter (Stream)"),
+            ),
+            RaisedButton(
+              color: Colors.amber,
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => BlocExample()));
+              },
+              child: Text("BloC Kullanımı"),
             )
+
           ],
         ),
       ),
