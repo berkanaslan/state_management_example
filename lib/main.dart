@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_management/bloc_example.dart';
 import 'package:flutter_state_management/counter.dart';
+import 'package:flutter_state_management/flutter_bloc_package..dart';
 import 'package:flutter_state_management/login_page.dart';
 import 'package:flutter_state_management/provider_exercise.dart';
 import 'package:flutter_state_management/splash.dart';
@@ -102,7 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     context, MaterialPageRoute(builder: (context) => BlocExample()));
               },
               child: Text("BloC Kullanımı"),
+            ),
+            RaisedButton(
+              color: Colors.amber,
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => FlutterBlockPackage()));
+              },
+              child: Text("flutter_bloc Kullanımı"),
             )
+
 
           ],
         ),
